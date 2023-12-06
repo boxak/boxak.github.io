@@ -9,10 +9,10 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    title: `주니어 프론트엔드 개발 블로그`,
+    description: `황지원의 개발 블로그입니다.`,
+    author: `boxak`,
+    siteUrl: `https://boxak.com/`,
   },
   plugins: [
     {
@@ -20,6 +20,13 @@ module.exports = {
       options: {
         isTSX: true,
         allExtensions: true,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: 'https://boxak.com/',
+        stripQueryString: true,
       },
     },
     `gatsby-plugin-image`,
@@ -41,20 +48,14 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-emotion`,
     `gatsby-plugin-image`,
-    // {
-    //   resolve: `gatsby-plugin-manifest`,
-    //   options: {
-    //     name: `gatsby-starter-default`,
-    //     short_name: `starter`,
-    //     start_url: `/`,
-    //     background_color: `#663399`,
-    //     // This will impact how browsers show your PWA/website
-    //     // https://css-tricks.com/meta-theme-color-and-trickery/
-    //     // theme_color: `#663399`,
-    //     display: `minimal-ui`,
-    //     icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
-    //   },
-    // },
+    `gatsby-plugin-sitemap`,
+    {
+      resolve: `gatsby-plugin-robots-txt`,
+      options: {
+        policy: [{ userAgent: '*', allow: '/' }],
+      },
+    },
+
     {
       resolve: `gatsby-transformer-remark`,
       options: {
