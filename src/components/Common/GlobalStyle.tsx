@@ -2,7 +2,11 @@ import React, { FunctionComponent } from 'react'
 import { Global, css } from '@emotion/react'
 
 const defaultStyle = css`
+  // 나눔 명조 폰트
   @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+
+  // 나눔 고딕 코딩 폰트
+  @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap');
 
   * {
     padding: 0;
@@ -22,6 +26,11 @@ const defaultStyle = css`
     color: inherit;
     text-decoration: none;
     cursor: pointer;
+  }
+
+  .gatsby-highlight span {
+    font-family: 'Nanum Gothic Coding', monospace;
+    font-weight: 700;
   }
 `
 

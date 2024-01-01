@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import { Global, css } from '@emotion/react'
 import styled from '@emotion/styled'
 

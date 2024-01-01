@@ -12,7 +12,7 @@ module.exports = {
     title: `주니어 프론트엔드 개발 블로그`,
     description: `황지원의 개발 블로그입니다.`,
     author: `boxak`,
-    siteUrl: `https://boxak.com/`,
+    siteUrl: `https://boxak.github.io/`,
   },
   plugins: [
     {
@@ -25,7 +25,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-canonical-urls`,
       options: {
-        siteUrl: 'https://boxak.com/',
+        siteUrl: 'https://boxak.github.io/',
         stripQueryString: true,
       },
     },

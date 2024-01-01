@@ -113,6 +113,7 @@ export const getPostList = graphql`
             slug
           }
           frontmatter {
+            title
             categories
             date(formatString: "YYYY.MM.DD.")
             summary
