@@ -1,0 +1,147 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.12.4"/><style data-href="/styles.9e907bc32054b7771552.css" data-identity="gatsby-global-css">code[class*=language-],pre[class*=language-]{word-wrap:normal;background:none;color:#ccc;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:1em;-webkit-hyphens:none;hyphens:none;line-height:1.5;tab-size:4;text-align:left;white-space:pre;word-break:normal;word-spacing:normal}pre[class*=language-]{margin:.5em 0;overflow:auto;padding:1em}:not(pre)>code[class*=language-],pre[class*=language-]{background:#2d2d2d}:not(pre)>code[class*=language-]{border-radius:.3em;padding:.1em;white-space:normal}.token.block-comment,.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#999}.token.punctuation{color:#ccc}.token.attr-name,.token.deleted,.token.namespace,.token.tag{color:#e2777a}.token.function-name{color:#6196cc}.token.boolean,.token.function,.token.number{color:#f08d49}.token.class-name,.token.constant,.token.property,.token.symbol{color:#f8c555}.token.atrule,.token.builtin,.token.important,.token.keyword,.token.selector{color:#cc99cd}.token.attr-value,.token.char,.token.regex,.token.string,.token.variable{color:#7ec699}.token.entity,.token.operator,.token.url{color:#67cdcc}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}.token.inserted{color:green}</style><link rel="canonical" href="https://boxak.github.io/js_study_variable_declaration/" data-baseprotocol="https:" data-basehost="boxak.github.io"/><style>.gatsby-image-wrapper{position:relative;overflow:hidden}.gatsby-image-wrapper picture.object-fit-polyfill{position:static!important}.gatsby-image-wrapper img{bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover}.gatsby-image-wrapper [data-main-image]{opacity:0;transform:translateZ(0);transition:opacity .25s linear;will-change:opacity}.gatsby-image-wrapper-constrained{display:inline-block;vertical-align:top}</style><noscript><style>.gatsby-image-wrapper noscript [data-main-image]{opacity:1!important}.gatsby-image-wrapper [data-placeholder-image]{opacity:0!important}</style></noscript><script type="module">const e="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;e&&document.body.addEventListener("load",(function(e){const t=e.target;if(void 0===t.dataset.mainImage)return;if(void 0===t.dataset.gatsbyImageSsr)return;let a=null,n=t;for(;null===a&&n;)void 0!==n.parentNode.dataset.gatsbyImageWrapper&&(a=n.parentNode),n=n.parentNode;const o=a.querySelector("[data-placeholder-image]"),r=new Image;r.src=t.currentSrc,r.decode().catch((()=>{})).then((()=>{t.style.opacity=1,o&&(o.style.opacity=0,o.style.transition="opacity 500ms linear")}))}),!0);</script><link rel="sitemap" type="application/xml" href="/sitemap-index.xml"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><style data-emotion="css 13ku56z">.css-13ku56z{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;height:100%;}</style><main class="css-13ku56z e1strnqo0"><style data-emotion="css-global 1u9551y">@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap');*{padding:0;margin:0;box-sizing:border-box;font-family:'Nanum Myeongjo',serif;}html,body,#___gatsby{height:100%;}a,a:hover{color:inherit;-webkit-text-decoration:none;text-decoration:none;cursor:pointer;}.gatsby-highlight span{font-family:'Nanum Gothic Coding',monospace;font-weight:700;}</style><style data-emotion="css 179pl2g">.css-179pl2g{position:relative;width:100%;height:400px;}</style><div class="css-179pl2g e1opi4mu1"><style data-emotion="css dkwb1y">.css-dkwb1y{z-index:-1;width:100%;height:400px;object-fit:cover;-webkit-filter:brightness(0.25);filter:brightness(0.25);}</style><div data-gatsby-image-wrapper="" style="position:absolute" class="gatsby-image-wrapper gatsby-image-wrapper-constrained css-dkwb1y e1opi4mu0"><div style="max-width:1200px;display:block"><img alt="" role="presentation" aria-hidden="true" src="data:image/svg+xml;charset=utf-8,%3Csvg%20height=&#x27;630&#x27;%20width=&#x27;1200&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%20version=&#x27;1.1&#x27;%3E%3C/svg%3E" style="max-width:100%;display:block;position:static"/></div><div aria-hidden="true" data-placeholder-image="" style="opacity:1;transition:opacity 500ms linear;background-color:#e8d848;position:absolute;top:0;left:0;bottom:0;right:0"></div><picture><source type="image/webp" data-srcset="/static/854d97a2047b5eedb2aa8ec6d3633cbe/c7da1/JavaScript.webp 300w,/static/854d97a2047b5eedb2aa8ec6d3633cbe/22c65/JavaScript.webp 600w,/static/854d97a2047b5eedb2aa8ec6d3633cbe/81547/JavaScript.webp 1200w" sizes="(min-width: 1200px) 1200px, 100vw"/><img data-gatsby-image-ssr="" data-main-image="" style="opacity:0" sizes="(min-width: 1200px) 1200px, 100vw" decoding="async" loading="lazy" data-src="/static/854d97a2047b5eedb2aa8ec6d3633cbe/fcb2f/JavaScript.jpg" data-srcset="/static/854d97a2047b5eedb2aa8ec6d3633cbe/f1930/JavaScript.jpg 300w,/static/854d97a2047b5eedb2aa8ec6d3633cbe/550ca/JavaScript.jpg 600w,/static/854d97a2047b5eedb2aa8ec6d3633cbe/fcb2f/JavaScript.jpg 1200w" alt="thumbnail"/></picture><noscript><picture><source type="image/webp" srcSet="/static/854d97a2047b5eedb2aa8ec6d3633cbe/c7da1/JavaScript.webp 300w,/static/854d97a2047b5eedb2aa8ec6d3633cbe/22c65/JavaScript.webp 600w,/static/854d97a2047b5eedb2aa8ec6d3633cbe/81547/JavaScript.webp 1200w" sizes="(min-width: 1200px) 1200px, 100vw"/><img data-gatsby-image-ssr="" data-main-image="" style="opacity:0" sizes="(min-width: 1200px) 1200px, 100vw" decoding="async" loading="lazy" src="/static/854d97a2047b5eedb2aa8ec6d3633cbe/fcb2f/JavaScript.jpg" srcSet="/static/854d97a2047b5eedb2aa8ec6d3633cbe/f1930/JavaScript.jpg 300w,/static/854d97a2047b5eedb2aa8ec6d3633cbe/550ca/JavaScript.jpg 600w,/static/854d97a2047b5eedb2aa8ec6d3633cbe/fcb2f/JavaScript.jpg 1200w" alt="thumbnail"/></picture></noscript><script type="module">const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}</script></div><style data-emotion="css 1nt3uj4">.css-1nt3uj4{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;width:768px;height:100%;margin:0 auto;padding:60px 0;color:#ffffff;}</style><div class="css-1nt3uj4 e1st1jau3"><style data-emotion="css khrtos">.css-khrtos{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background-color:#ffffff;color:#000000;font-size:22px;cursor:pointer;box-shadow:0 0 10px rgba(0, 0, 0, 0.3);}</style><div class="css-khrtos e1st1jau2"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-left" class="svg-inline--fa fa-arrow-left " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"></path></svg></div><style data-emotion="css 1w9xhjj">.css-1w9xhjj{display:-webkit-box;overflow:hidden;overflow-wrap:break-word;margin-top:auto;text-overflow:ellipsis;white-space:normal;-webkit-line-clamp:2;-webkit-box-orient:vertical;font-size:45px;font-weight:800;}</style><div class="css-1w9xhjj e1st1jau1">[Javscript-Study] var vs let vs const, 그리고 호이스팅</div><style data-emotion="css ll8ohq">.css-ll8ohq{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;margin-top:10px;font-size:18px;font-weight:700;}</style><div class="css-ll8ohq e1st1jau0"><div>자바스크립트 기본기</div><div>2024.05.19.</div></div></div></div><style data-emotion="css ofkt1x">.css-ofkt1x{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;width:768px;margin:0 auto;padding:100px 0;word-break:break-all;line-height:1.8;font-size:16px;font-weight:400;}.css-ofkt1x p{padding:3px 0;}.css-ofkt1x h1,.css-ofkt1x h2,.css-ofkt1x h3{font-weight:800;margin-bottom:30px;}.css-ofkt1x *+h1,.css-ofkt1x *+h2,.css-ofkt1x *+h3{margin-top:0;}.css-ofkt1x hr+h1,.css-ofkt1x hr+h2,.css-ofkt1x hr+h3{margin-top:0;}.css-ofkt1x h1{font-size:30px;}.css-ofkt1x h2{font-size:25px;}.css-ofkt1x h3{font-size:20px;}.css-ofkt1x blockquote{margin:30px 0;padding:5px 15px;border-left:2px solid #000000;font-weight:800;}.css-ofkt1x ol,.css-ofkt1x ul{margin-left:20px;padding:30px 0;}.css-ofkt1x hr{border:1px solid #000000;margin:100px 0;}.css-ofkt1x a{color:#4263eb;-webkit-text-decoration:underline;text-decoration:underline;}.css-ofkt1x pre[class*='language']{margin:30px 0;padding:15px;font-size:15px;}.css-ofkt1x pre[class*='language']::-webkit-scrollbar-thumb{background:rgba(255, 255, 255, 0.5);background-radius:3px;}.css-ofkt1x code[class*='language-'],.css-ofkt1x pre[class*='language-']{tab-size:2;}</style><div class="css-ofkt1x e1ijh0y10"><h2>1. var, let, const 의 차이점</h2>
+<ul>
+<li>
+<p>var : 자바스크립트의 기본적인 변수 선언자. 특징으로는 재할당이 가능하다(즉, 처음 변수 선언할 때 할당해준 값을 변경 가능하다.), 변수 선언을 중복해서 하여도 에러가 발생하지 않는다.</p>
+</li>
+<li>
+<p>let : ECMAScript 6 부터 추가된 선언자. var처럼 재할당을 해줄 수 있다는 점은 var와 같으나, 변수 선언을 중복해서 하게 되면 에러가 발생한다는 것이 var와 다른 점이다.</p>
+</li>
+<li>
+<p>const : ECMAScript 6 부터 추가된 선언자. var, let과는 다르게 재할당을 허용하지 않는다. 또한 변수 선언을 중복해서 하는 것도 허용하지 않는다.</p>
+</li>
+</ul>
+<h1></h1>
+<h4>호이스팅에서의 차이점</h4>
+<p>var, let, const 는 호이스팅에 있어서 어떤 차이점을 가지고 있을까?</p>
+<ul>
+<li>var</li>
+</ul>
+<p>var는 변수 호이스팅(코드 윗부분이 아닌 중간 부분에 변수 선언이 있어도 에러가 나지 않는 현상) 현상을 허용한다.</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>foo<span class="token punctuation">)</span> <span class="token comment">// undefined 출력</span>
+foo <span class="token operator">=</span> <span class="token number">123</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>foo<span class="token punctuation">)</span> <span class="token comment">// 123 출력</span></code></pre></div>
+<p>즉 위와 같이 변수 초기화(= 123) 부분은 위로 올려지지 않지만 foo 라는 변수 선언 자체는 위로 끌어올려진 것처럼 보인다. 그래서 끌어올리다는 뜻을 가진 hoist 라는 용어를 써서 해당 현상을 호이스팅 이라고 표현한다.</p>
+<ul>
+<li>let</li>
+</ul>
+<p>let은 어떨까? let의 경우에는 에러가 발생한다.</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>foo<span class="token punctuation">)</span> <span class="token comment">// Reference Error : Cannot access 'foo' before initialization</span>
+<span class="token keyword">let</span> foo</code></pre></div>
+<p>위 처럼 foo 라는 변수는 초기화가 되지 않았으므로 접근할 수 없다는 에러가 표시된다. 주목할 것은 다른 Java, C 언어처럼 ‘변수가 정의되지 않았습니다.’,‘변수를 찾을 수 없습니다.’ 같은 에러가 아니라 초기화 에러가 발생한다는 점에 주목해보자.</p>
+<p>우리는 var의 경우, 변수 선언보다 console.log 로 변수 출력을 먼저 실행하면 undefiend가 출력되는 것을 알 수 있다. 자바스크립트는 프로그램을 실행할 때, “선언 단계”, “초기화 단계”를 거치게 된다. var는 변수 선언과 undefined로의 초기화가 함께 일어나는 것처럼 보인다. 즉, var는 선언 단계 - 초기화 단계가 한번에 진행된다.</p>
+<p>let은 반면에, “선언 단계”와 “초기화 단계”가 분리되어 진행된다. 그러므로 let은 var와 같이 변수 선언이 다른 코드의 실행보다 앞서 실행되는 것은 공통이지만 초기화는 프로그램의 본격적인 실행 단계에서 진행되므로 변수 선언 코드보다 윗부분에서 해당 변수를 이용하려고 하면 참조 에러가 발생하는 것이다.</p>
+<h1></h1>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 768px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/5f7b9948776a86c8ede7a94117059fbf/bbbf7/var_let_const.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 46.875%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAJCAIAAAC9o5sfAAAACXBIWXMAAAsTAAALEwEAmpwYAAACI0lEQVR42kXN22tSARwH8OPDHhRynnO0I81bbWo0daUSQU8xotFDRBA9BYMeov8hxlgs01ozN6/HaUZtLS+b7pzjZfM2KqhobW4rGQ1qUBb0NNZx2o6/Dj4U/B4+/G5fRCgUCgQCkUjUe6JXr9cTBGE+ZdZoNAQhNxiMYrEYwzAcx1EUxVBU2gaO4SaTSSqTIvy4o6OD3+g72WcwGo90dVmslh5tj1qtsljMCqWiW6vVHdcrVaqj3cd0ep1ao1YoldbTVpVajShVSkyM9l+/6Kg+Gf1A2jcjw6uBh6uh9Rf3P0dG07mJ22vk0DuPbT18ZyUw9NZtq4T4GlnxOzYeI5gUl4mxM4MDTig6mmkfLDn3k5F9plkOAuP+uDX7CLLu+oIf8mPcor3BuKAwxuVsDcoJeUQi6UQQ5Oq1C1tfE5XNZ9FfSVeTmdqjy1+ir7dnUz/mPXVmssHw/Y1PM2vV6Ur1eaU6U2kDQSUSVEYMDpyFAgkpV+Zb7O5uzM0u2P9QI3uJ8VbmQT01zM7RtThQkxw9AVkfpD3QBiLp5JMFNy6dgzdPW/lAtjY33qTJetpfp90sNb1LMbVE/Gf8/XYUisGDIskth7nSFNcGIpcTh1D81pXz8CoMOW+2lnD8nvextIcPZ5PLOzHI+bglH5SCUAi0/sMLJRKRE4fFmPTm5X54GYKsJ/M9zt94WcrNpu7Vk+WdKP/xgF8tkpD3t/5h0QPFwF+t6yH+DQQwGQAAAABJRU5ErkJggg=='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/5f7b9948776a86c8ede7a94117059fbf/a59e9/var_let_const.webp 192w,
+/static/5f7b9948776a86c8ede7a94117059fbf/0ca9f/var_let_const.webp 384w,
+/static/5f7b9948776a86c8ede7a94117059fbf/dc9b9/var_let_const.webp 768w,
+/static/5f7b9948776a86c8ede7a94117059fbf/e2c2f/var_let_const.webp 1152w,
+/static/5f7b9948776a86c8ede7a94117059fbf/94b1e/var_let_const.webp 1280w"
+              sizes="(max-width: 768px) 100vw, 768px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/5f7b9948776a86c8ede7a94117059fbf/3b721/var_let_const.png 192w,
+/static/5f7b9948776a86c8ede7a94117059fbf/66595/var_let_const.png 384w,
+/static/5f7b9948776a86c8ede7a94117059fbf/fe486/var_let_const.png 768w,
+/static/5f7b9948776a86c8ede7a94117059fbf/d2d74/var_let_const.png 1152w,
+/static/5f7b9948776a86c8ede7a94117059fbf/bbbf7/var_let_const.png 1280w"
+            sizes="(max-width: 768px) 100vw, 768px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/5f7b9948776a86c8ede7a94117059fbf/fe486/var_let_const.png"
+            alt="var, let, const의 차이점을 간략하게 나타낸 테이블"
+            title=""
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span></p>
+<h1></h1>
+<h2>2. 그렇다면 언제 사용할까?</h2>
+<p>var, let, const라는 세가지 선언자는 각각 어느 경우에 사용하는 것이 적절할까? 어떤 변수를 선언할 때 var, let, const를 사용하는 것일까? 아래에 그 예시가 있다.</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 768px; "
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/6acfd877a535632563e6d508f92e3dc3/64756/ES6_Convention1.png"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 80.20833333333334%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAQCAIAAACZeshMAAAACXBIWXMAAAsTAAALEwEAmpwYAAACIklEQVR42p1S30/TUBjtH8AMbe+v+l/5pk/iEz776jMvxmSJhpCYYIyEGPEHSHBbNlgmG7CNtWObIFvXdWWbRBwqGwMeTPC0FRhkGmNycnNve873nXu+K/2oif+GdOX83XLh779VzzbWpe+DxQe26Dqit6OBd+hoR03twCt31NAOd9wVhAFiMHoNrbhM56eV18/kyCvFSNC1CEnMqythNRenq2EyNTGsxwlKnFu46Nypi0aRb63SUpJaOnM2sGelFG0WubnOLIMVlmmzxEG76IwDLGEFUPWkpR03NZjvOrCq+b9wBXzBLfqVrrj1kVdzrFXiu5schYF9E2zRsS+FNDgwWFqaU9NRshIi8Tk1+V6F28+bfHeLdz07CMlr7m6u6KV2hWdjJBMl64skFVLzCYqQ3k0rmRipbzCn4DqCO/T4ss1hvl8voQnYXqpEXyLIOTKjxN4oyQV14YUyOyUvvlVnn8soB18gd/qmJX0ti0qWVZGnzuw8K2do4QM1swyxb6cB99enNYpB2IZ7l56b4u9pSTDjFFg9z2oGxsNqOoNb22BWjpk5hiz3yhxPANfGg8OK5uU0g39X7OcBdM/gHzuOdwTJFm1T/NzTngSViYfK6Ehg9HYgHaXHLU06H8OfAEK7Ik4718cfyMEx+f69a3fvBFIheuKL/w48b0weypFbQ77+5o2h4Njw6f4/iL1nL8IvyeQjBVVmJpWnj2U39rr4BeLhOw0uIUBvAAAAAElFTkSuQmCC'); background-size: cover; display: block;"
+  ></span>
+  <picture>
+          <source
+              srcset="/static/6acfd877a535632563e6d508f92e3dc3/a59e9/ES6_Convention1.webp 192w,
+/static/6acfd877a535632563e6d508f92e3dc3/0ca9f/ES6_Convention1.webp 384w,
+/static/6acfd877a535632563e6d508f92e3dc3/dc9b9/ES6_Convention1.webp 768w,
+/static/6acfd877a535632563e6d508f92e3dc3/e2c2f/ES6_Convention1.webp 1152w,
+/static/6acfd877a535632563e6d508f92e3dc3/cbd37/ES6_Convention1.webp 1200w"
+              sizes="(max-width: 768px) 100vw, 768px"
+              type="image/webp"
+            />
+          <source
+            srcset="/static/6acfd877a535632563e6d508f92e3dc3/3b721/ES6_Convention1.png 192w,
+/static/6acfd877a535632563e6d508f92e3dc3/66595/ES6_Convention1.png 384w,
+/static/6acfd877a535632563e6d508f92e3dc3/fe486/ES6_Convention1.png 768w,
+/static/6acfd877a535632563e6d508f92e3dc3/d2d74/ES6_Convention1.png 1152w,
+/static/6acfd877a535632563e6d508f92e3dc3/64756/ES6_Convention1.png 1200w"
+            sizes="(max-width: 768px) 100vw, 768px"
+            type="image/png"
+          />
+          <img
+            class="gatsby-resp-image-image"
+            src="/static/6acfd877a535632563e6d508f92e3dc3/fe486/ES6_Convention1.png"
+            alt="Javascript 표준 스타일과 Airbnb에서 권장하는 코드컨벤션"
+            title=""
+            loading="lazy"
+            decoding="async"
+            style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+          />
+        </picture>
+  </a>
+    </span></p>
+<ol>
+<li>
+<p>먼저 const를 기본으로 사용해라.</p>
+</li>
+<li>
+<p>그 다음, reassign, 값의 재할당이 필요한 변수는 let으로 선언해라.</p>
+</li>
+<li>
+<p>var 는 legacy code를 수정할 때만 가급적 사용해라.</p>
+</li>
+</ol>
+<p>-> 즉, 기본적으로 변수 선언할 때는 const를 기본으로 쓰는 것이 프로그램의 오류를 줄일 수 있는 방법이며, 재할당이 필요한 변수들은 let으로 선언하도록 권장하고 있다. var 는 old version이라는 얘기.</p></div><div></div><style data-emotion="css 9w9jmx">.css-9w9jmx{display:grid;place-items:center;margin-top:auto;padding:50px 0;font-size:15px;text-align:center;line-height:1.5;}@media (max-width: 768px){.css-9w9jmx{font-size:13px;}}</style><footer class="css-9w9jmx e1oae0v80">Thank You for Visiting My Blog, Have a Good Day 😆<br/>© 2021 Developer Hyun, Powered By Gatsby.</footer></main></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/js_study_variable_declaration/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+          <script
+            id="gatsby-chunk-mapping"
+          >
+            window.___chunkMapping="{\"app\":[\"/app-4259b1a0dbd23faf49e4.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-dc3c1aad471f45b02681.js\"],\"component---src-pages-info-tsx\":[\"/component---src-pages-info-tsx-dbc9fef63cf446878e42.js\"],\"component---src-templates-post-template-tsx\":[\"/component---src-templates-post-template-tsx-9b6e07f2ddf07dc12ba0.js\"]}";
+          </script>
+        <script>window.___webpackCompilationHash="a6d5651ffc16ca07819b";</script><script src="/webpack-runtime-2712c9843d65577d9522.js" async></script><script src="/framework-6a525285796fb83f2864.js" async></script><script src="/app-4259b1a0dbd23faf49e4.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>
