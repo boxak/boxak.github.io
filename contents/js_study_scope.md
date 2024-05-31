@@ -53,7 +53,7 @@ second()
 
 #
 
-# 3. Scope Chain과 Execution Context(실행 컨텍스트)
+# 3. Scope Chain
 
 - 만일 second 함수가 first 함수 내부에 선언되어 있었다면?
 
@@ -77,4 +77,4 @@ first()
 
 - Scope Chain
 
-스코프 체인은
+스코프 체인은 어떤 함수가 전역으로 선언되어 있는 것이 아니라 어떤 함수 내부에 선언되어 있는 경우에 적용할 수 있다. 위의 경우에서 first 함수 내부에 second 함수가 있다면, second 함수 내부에서 x가 사용될 경우, 먼저 second 함수 내부에 x가 있는지를 찾고, 그 다음에 자신의 바로 상위 함수인 first에서 찾게 된다. 만일, first에서도 없으면 전역 스코프에서 x를 찾게 된다. 이것을 스코프 체인이라 하고, Scope Chain은 먼저 선언된 함수일수록 나중 순서로 변수를 찾게 되는데 이는 스택의 LIFO(Last In First Out)과 유사하다.
