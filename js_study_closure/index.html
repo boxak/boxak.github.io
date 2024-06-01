@@ -3,22 +3,131 @@
 <p>Closure는 <em>함수와 그 함수가 선언된 Lexical 환경과의 조합이다.</em> 라고 되어있다.(<a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Closures" target="_blank" rel="nofollow">https://developer.mozilla.org/ko/docs/Web/JavaScript/Closures</a>)</p>
 <p>우리는 자바스크립트에서 함수를 객체로 다룬다는 것을 알고 있다. 그렇다면 어떤 함수 f 가 존재한다고 하였을 때, f라는 함수 객체는
 어떠한 프로퍼티들을 가지고 있을 거라고 생각할 수 있다.</p>
-<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript">
-<span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token string">"A"</span><span class="token punctuation">;</span>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token string">'A'</span>
 
 <span class="token keyword">function</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">var</span> b <span class="token operator">=</span> <span class="token string">"B"</span><span class="token punctuation">;</span>
+  <span class="token keyword">var</span> b <span class="token operator">=</span> <span class="token string">'B'</span>
   <span class="token keyword">function</span> <span class="token function">g</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">var</span> c <span class="token operator">=</span> <span class="token string">"C"</span><span class="token punctuation">;</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a <span class="token operator">+</span> b <span class="token operator">+</span> c<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// -> ABC 출력</span>
+    <span class="token keyword">var</span> c <span class="token operator">=</span> <span class="token string">'C'</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a <span class="token operator">+</span> b <span class="token operator">+</span> c<span class="token punctuation">)</span> <span class="token comment">// -> ABC 출력</span>
   <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-</code></pre></div>
+<span class="token punctuation">}</span></code></pre></div>
 <p>위와 같은 코드가 있다고 할 때, g를 중첩 함수, 또는 내부 함수라고 하고 f를 g의 외부 함수라고 부른다. 그러면
 f, g의 렉시컬 환경 컴포넌트는 아래처럼 나타낼 수 있다.</p>
 <p><img src="https://github.com/boxak/boxak.github.io/assets/38724041/751e58e2-80b3-4149-839f-37b3abf3faf1" alt="image"></p>
 <p>즉, 위 이미지에서 처럼 함수 g가 선언이 될 때, g는 외부 함수인 f의 렉시컬 환경을 참조하게 된다.</p>
-<p>이처럼 클로저라는 개념에서 함수 g가 어떤 변수에 할당이 되어서</p></div><div></div><style data-emotion="css 9w9jmx">.css-9w9jmx{display:grid;place-items:center;margin-top:auto;padding:50px 0;font-size:15px;text-align:center;line-height:1.5;}@media (max-width: 768px){.css-9w9jmx{font-size:13px;}}</style><footer class="css-9w9jmx e1oae0v80">Thank You for Visiting My Blog, Have a Good Day 😆<br/>© 2021 Developer Hyun, Powered By Gatsby.</footer></main></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/js_study_closure/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+<p>이처럼 클로저라는 개념에서 함수 g가 어떤 변수에 할당이 되어서 사용되게 되면 함수 g가 참조하는 렉시컬 환경 즉, 함수 f의 클로저가 메모리에서 지워지지 않고 그대로 남게 되는 것이다. 그래서 아래와 같이 counter 함수를 3번 호출하게 되면 count라는 변수가 3번 증가하게 되어 count = 3 이라는 결과를 얻을 수 있다.</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript">
+<span class="token keyword">function</span> <span class="token function">makeCounter</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> count <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token function">funtion</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token operator">++</span>count<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> counter <span class="token operator">=</span> <span class="token function">makeCounter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">counter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 1</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">counter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 2</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">counter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 3</span>
+</code></pre></div>
+<h1></h1>
+<h4>-> 요약</h4>
+<ol>
+<li>
+<p>외부 함수를 호출하면 이 함수의 렉시컬 환경 컴포넌트가 생성된다.
+그리고 그 안에 중첩된 함수의 함수 객체를 생성해서 반환한다. 즉, 외부 함수는 클로저를 생성하는 팩토리 함수라고 할 수 있다.</p>
+</li>
+<li>
+<p>외부 함수가 속한 렉시컬 환경 컴포넌트는 클로저 내부 상태 그 자체이다. 따라서 외부 함수가 호출될 때마다 클로저는 새로 생성된다.</p>
+</li>
+<li>
+<p>중첩 함수의 함수 객체가 살아있으면 외부 함수의 렉시컬 환경 컴포넌트는 지워지지 않는다.</p>
+</li>
+<li>
+<p>클로저 내부 상태(외부 함수의 지역 변수, 선언전 환경 레코드)는 외부로부터 은폐되어 중첩 함수를 통해서만 읽고 쓸 수 있다.</p>
+</li>
+</ol>
+<h2>2. 클로저의 활용</h2>
+<h3>1. 여러 개의 내부 상태, 메서드를 가진 클로저</h3>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">Person</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span> age</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> _name <span class="token operator">=</span> name
+  <span class="token keyword">var</span> _age <span class="token operator">=</span> age
+
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">getName</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> _name
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">getAge</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> _age
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">setAge</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">x</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      _age <span class="token operator">=</span> x
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> person <span class="token operator">=</span> <span class="token function">Person</span><span class="token punctuation">(</span><span class="token string">'Tom'</span><span class="token punctuation">,</span> <span class="token number">18</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>person<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// Tom</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>person<span class="token punctuation">.</span><span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// 18</span>
+person<span class="token punctuation">.</span><span class="token function">setAge</span><span class="token punctuation">(</span><span class="token number">19</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>person<span class="token punctuation">.</span><span class="token function">getAge</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// 19</span></code></pre></div>
+<h1></h1>
+<h3>2. 함수 팩토리</h3>
+<p>클로저를 활용하면 다양한 매개변수를 받는 함수를 여러 개 생성할 수 있다.</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">makeMultiplier</span><span class="token punctuation">(</span><span class="token parameter">x</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">y</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> x <span class="token operator">*</span> y
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> multi2 <span class="token operator">=</span> <span class="token function">makeMultiplier</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token keyword">var</span> multi10 <span class="token operator">=</span> <span class="token function">makeMultiplier</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">multi2</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// 6</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">multi10</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// 30</span></code></pre></div>
+<h1></h1>
+<h3>3. 초기화 기능이 추가된 함수 생성하기</h3>
+<p>가령, 에라토스테네스의 체 원리로 소수 목록을 구하고 그 중 여거 개 소수를 무작위로 선택해 그 곱을 반환하는 함수를 만드려 한다고 하자. 그런데 매번 소수 목록을 구하는 작업을 매번 실행하게 만들면 그 만큼 계산 시간이 길어진다. 그래서 클로저를 생성할 때 이것을 한 번만 실행시켜서 그 이후에는 결과만 처리하게 할 수 있다.</p>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">Primes</span><span class="token punctuation">(</span><span class="token parameter">n</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> p <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    p<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">true</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">var</span> max <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">sqrt</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span> x <span class="token operator">&lt;=</span> max<span class="token punctuation">;</span> x<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> x <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> i <span class="token operator">+=</span> x<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      p<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">false</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>p<span class="token punctuation">[</span><span class="token operator">++</span>x<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">var</span> primes <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    nprimes <span class="token operator">=</span> <span class="token number">0</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>p<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      primes<span class="token punctuation">[</span>nprimes<span class="token operator">++</span><span class="token punctuation">]</span> <span class="token operator">=</span> i
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  p <span class="token operator">=</span> <span class="token keyword">null</span>
+
+  <span class="token keyword">return</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">m</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> product <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> m<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      product <span class="token operator">*=</span> primes<span class="token punctuation">[</span>Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span> nprimes<span class="token punctuation">)</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> product
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> primeProduct <span class="token operator">=</span> <span class="token function">Primes</span><span class="token punctuation">(</span><span class="token number">100000</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">primeProduct</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">primeProduct</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre></div></div><div></div><style data-emotion="css 9w9jmx">.css-9w9jmx{display:grid;place-items:center;margin-top:auto;padding:50px 0;font-size:15px;text-align:center;line-height:1.5;}@media (max-width: 768px){.css-9w9jmx{font-size:13px;}}</style><footer class="css-9w9jmx e1oae0v80">Thank You for Visiting My Blog, Have a Good Day 😆<br/>© 2021 Developer Hyun, Powered By Gatsby.</footer></main></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/js_study_closure/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
           <script
             id="gatsby-chunk-mapping"
           >
